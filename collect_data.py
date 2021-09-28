@@ -14,7 +14,7 @@ from interes_categories import interes2
 from mysql.connector import connect, Error
 from moscow_koor import msk_koor
 
-def collect_data_from_vk_api(acc_id, acc_token, usr, passwd, interes, koor, lnk_url, lnk_domain, second):
+def collect_data_from_vk_api(acc_id, acc_token, usr, passwd, db_name, interes, koor, lnk_url, lnk_domain, second):
     error = 0
     try:
         criter = {
@@ -29,7 +29,7 @@ def collect_data_from_vk_api(acc_id, acc_token, usr, passwd, interes, koor, lnk_
                     host = 'localhost',
                     user = usr,
                     password = passwd,
-                    database = "collect_interes_vk_api",
+                    database = db_name,
                     ) as connection:
                 with connection.cursor() as cursor:
                     cursor.execute(data)
@@ -56,6 +56,7 @@ if __name__ == '__main__':
     print("Mysql data:")
     usr = input("user name: ")
     passwd = getpass("passwd: ")
+    db_name = "collect_interes_vk_api"
     
     interes = interes2[0]
     errors = 0
