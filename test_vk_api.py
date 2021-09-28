@@ -37,7 +37,8 @@ for i in range(len(interes2)):
         "geo_near" : '55.711762566837045,37.959665523333335,500'}
     json_geo = json.dumps(criter)
     rq = requests.post("https://api.vk.com/method/ads.getTargetingStats?account_id=" + str(acc_id) + "&access_token=" + str(acc_token) + "&v=5.131&link_url=https://vk.com/dev/ads.getTargetingStats&link_domain=vk.com&criteria=" + json_geo, headers = { 'User_Agent' : generate_user_agent()})
-    print(str(interes2[i]) + " " + str(json.loads(rq.text)['response']['audience_count']))
+    #print(str(interes2[i]) + " " + str(json.loads(rq.text)['response']['audience_count']))
+    print(rq.text)
     del criter, json_geo, rq
     sleep(2)
 print(time() - start_time)
