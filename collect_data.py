@@ -63,7 +63,7 @@ if __name__ == '__main__':
     
     for i in range(len(msk_koor)):
         koor = msk_koor[i]
-        errors += collect_data_from_vk_api(acc_id, acc_token, usr, passwd, interes, koor, lnk_url, lnk_domain, 2)
+        errors += collect_data_from_vk_api(acc_id, acc_token, usr, passwd, db_name, interes, koor, lnk_url, lnk_domain, 2)
         if errors >= 10:
             pass
         print('count = %d error_count = %d'%(i, errors))
