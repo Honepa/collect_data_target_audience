@@ -23,7 +23,7 @@ create_table = """
 
 #insert_data = "insert into interes_and_points (koor_x, koor_y, category_name, count_person) values (37.959665523333335, 55.71624751224521, 'Ноутбуки, компьютеры и комплектующие', 5156556165)"
 
-"""
+
 try:
     with connect(
             host = 'localhost',
@@ -47,8 +47,8 @@ try:
         print(e)
 except Error as e:
     print(e)
-"""
 
+"""
 try:
     with connect(
             host = 'localhost',
@@ -61,7 +61,7 @@ try:
             connection.commit()
 except Error as e:
     print(e)
-
+"""
 """
 try:
     with connect(
