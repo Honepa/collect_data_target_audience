@@ -9,16 +9,18 @@ Created on Sun Sep 26 14:19:57 2021
 from getpass import getpass
 from mysql.connector import connect, Error
 
+hst = 'localhost'
+usr = 'root'
+passwd = getpass("passwd: ")
+
 try:
     with connect(
-            host = 'localhost',
-            user = input("us_name: "),
-            password =  getpass("passwd: "),
+            host = hst,
+            user = usr,
+            password =  passwd,
             )  as connection:
         with connection.cursor() as cursor:
-            cursor.execute("SHOW DATABASES")
-            for db in cursor:
-                print(db)
+            print(connection)
 except Error as e:
     print(e)
 

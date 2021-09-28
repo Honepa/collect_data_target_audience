@@ -13,11 +13,11 @@ create_bd = "CREATE DATABASE collect_interes_vk_api";
 create_table = """
     CREATE TABLE interes_and_points(
         id INT AUTO_INCREMENT PRIMARY KEY,
-        koor_x REAL UNIQUE,
-        koor_y REAL UNIQUE,
-        category_name VARCHAR(255) UNIQUE,
-        link VARCHAR(500) UNIQUE,
-        count_person BIGINT UNSIGNED UNIQUE
+        koor_x REAL,
+        koor_y REAL,
+        category_name VARCHAR(255),
+        link VARCHAR(500),
+        count_person BIGINT UNSIGNED
 )
 """
 
