@@ -14,6 +14,8 @@ from interes_categories import interes2
 from mysql.connector import connect, Error
 from moscow_koor import msk_koor
 
+
+
 def collect_data_from_vk_api(acc_id, acc_token, usr, passwd, db_name, interes, koor, lnk_url, lnk_domain, second):
     error = 0
     try:
@@ -65,6 +67,6 @@ if __name__ == '__main__':
         koor = msk_koor[i]
         errors += collect_data_from_vk_api(acc_id, acc_token, usr, passwd, db_name, interes, koor, lnk_url, lnk_domain, 2)
         if errors >= 10:
-            pass
+            break
         print('count = %d error_count = %d'%(i, errors))
     print(errors)

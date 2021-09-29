@@ -13,6 +13,7 @@ from interes_categories import interes2
 from getpass import getpass
 from time import sleep, time
 
+
 #session = vk_api.VkApi(token = "")
 
 #vk = session.get_api() 
